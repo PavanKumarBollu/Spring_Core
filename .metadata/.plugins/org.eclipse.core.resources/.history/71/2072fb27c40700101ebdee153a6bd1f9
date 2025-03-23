@@ -1,0 +1,12 @@
+package com.pavan.test;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class SetterInjuction_BeanFactory {
+
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext factory = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+	}
+
+}

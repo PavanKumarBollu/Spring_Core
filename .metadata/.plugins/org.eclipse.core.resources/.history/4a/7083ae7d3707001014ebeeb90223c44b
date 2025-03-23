@@ -1,0 +1,16 @@
+package com.pavan.test;
+
+import com.pavan.comp.WishGenarator;
+
+import ava.util.Date;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		
+		WishGenarator wish = new WishGenarator();
+		System.out.println("Target Object Is : " + wish);
+			Date date = new java.util.Date();
+		wish.setDate(new java.util.Date());
+	}
+}

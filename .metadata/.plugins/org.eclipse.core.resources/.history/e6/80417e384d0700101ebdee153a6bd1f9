@@ -1,0 +1,15 @@
+package com.pavan.test;
+
+import java.nio.file.FileSystem;
+
+
+public class SetterInjuctionUsingBeenFactory {
+
+	public static void main(String[] args) {
+
+		FileSystemResource resource = new FileSystemResource("src/in/ineuron/cfg/applicationContext.xml");
+
+	
+	}
+
+}

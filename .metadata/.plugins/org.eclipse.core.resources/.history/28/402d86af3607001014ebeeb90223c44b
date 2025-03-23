@@ -1,0 +1,31 @@
+package com.pavan.comp;
+
+import java.util.Date;
+
+public class WishGenarator {
+	private Date date = null;
+	
+	
+	static
+	{
+		System.out.println("WishGenarator .class file is loaded");
+	}
+
+
+	public WishGenarator() {
+	System.out.println("Wish Genarator Object Instantiated ");
+	}
+
+
+	public Date getDate() {
+		return date;
+	}
+
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	
+	
+}

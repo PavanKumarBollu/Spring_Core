@@ -1,0 +1,9 @@
+package com.pavan.test;
+
+public class SetterInjuction_PureJavaStyle {
+
+	public static void main(String[] args) {
+
+	}
+
+}

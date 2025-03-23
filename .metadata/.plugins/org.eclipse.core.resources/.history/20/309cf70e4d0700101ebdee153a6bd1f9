@@ -1,0 +1,9 @@
+package com.pavan.test;
+
+public class SetterInjuctionUsingBeenFactory {
+
+	public static void main(String[] args) {
+			new FileSystemResource()
+	}
+
+}

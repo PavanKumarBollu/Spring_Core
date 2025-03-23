@@ -1,0 +1,13 @@
+package com.pavan.messagebean;
+
+import java.util.Date;
+
+public class WishMessageGenarator {
+	private Date date = null;
+
+	public WishMessageGenarator() {
+		System.out.println("WishMessageGenarator Object got instansiated.....");
+	}
+	
+	
+}

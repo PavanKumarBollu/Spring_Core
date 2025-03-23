@@ -1,0 +1,19 @@
+package com.pavan.test;
+
+import com.pavan.comp.WishGenarator;
+
+import java.util.Date;
+
+public class Test {
+	public static void main(String[] args) {
+
+		WishGenarator wishGenarator = new WishGenarator();
+		System.out.println("Target Object before Setter Injuction Is : " + wishGenarator);
+		Date date = new java.util.Date();
+		System.out.println("Dependent Object Is : " + date);
+		wishGenarator.setDate(date);
+		System.out.println("Target Object After Setter Injuction Is : " + wishGenarator);
+		String wishResult = wishGenarator.wish("Pavan");
+		System.out.println(wishResult);
+	}
+}
