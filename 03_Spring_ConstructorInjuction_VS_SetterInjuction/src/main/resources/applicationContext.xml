@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Dependent Object1  -->
+	<bean name="dt1" class="java.util.Date" />
+	
+	
+	<!-- Dependent Object2  -->
+	<bean name="dt2" class="java.util.Date">
+		<property name="month" value = "08" />
+		<property name="date" value = "23" />
+		<property name="year" value = "2001" />
+	</bean>	
+	
+	
+	<bean id="wmg" class="com.pavan.messagebean.WishMessageGenarator">
+		<constructor-arg name="date" ref="dt1" />
+		<property name="date" ref = "dt2" />
+	</bean>
+
+
+
+</beans>
+ 
+ 

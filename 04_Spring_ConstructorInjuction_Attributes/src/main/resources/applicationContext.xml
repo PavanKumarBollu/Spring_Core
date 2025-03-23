@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="std1" class="com.pavan.beans.Student">
+		<constructor-arg type="java.lang.String" value="MI" />
+		<constructor-arg type="java.lang.Integer" value="37" />
+		<constructor-arg type="java.lang.String"
+			value="rohitSharma" />
+		<constructor-arg type="java.lang.Float" value="5.8" />
+		<!--Data mismatch May Happen With This Case -->
+	</bean>
+
+	<bean id="std2" class="com.pavan.beans.Student">
+
+		<constructor-arg index="0" value="Pavan" />
+		<constructor-arg index="3" value="5.8" />
+		<constructor-arg index="1" value="24" />
+		<constructor-arg index="2" value="Hyderabad" />
+		<!-- No Chance for Data MisMatch -->
+	</bean>
+
+	<bean id= "std3" class="com.pavan.beans.Student">
+		<constructor-arg name="height" value="5.8" />
+		<constructor-arg name="age" value="24" />
+		<constructor-arg name="address" value="HYD" />
+		<constructor-arg name="name" value="Kumar" />
+		<!-- No Chance for Data MisMatch -->
+
+	</bean>
+
+	<bean id="std4" class = "com.pavan.beans.Student">
+		<constructor-arg name="height" value="5.8" index="3" />
+		<constructor-arg name="age" value="24"  index="1" />
+		<constructor-arg name="address" value="HYD"  index="2"/>
+		<constructor-arg name="name" value="Kumar"  index="0" />
+		<!-- May Cause the UnSatisfied Dependency Injection Exception 
+		if name and index is not Matching to the Student Class Attributes -->
+
+	</bean>
+</beans>
