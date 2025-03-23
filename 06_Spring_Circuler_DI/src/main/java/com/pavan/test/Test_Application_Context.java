@@ -2,7 +2,7 @@ package com.pavan.test;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.pavan.beans.Flipkart;
+import com.pavan.beans.A;
 
 public class Test_Application_Context {
 
@@ -13,15 +13,8 @@ public class Test_Application_Context {
 		System.out.println("*****CONTAINER STARTED****\n");
 		System.out.println();
 		System.out.println();
-
-		Flipkart flipkartBean = factory.getBean("flipkart", Flipkart.class);
-		System.out.println(flipkartBean);
+		A a = factory.getBean("A", A.class);
 		System.out.println();
-
-		String result = flipkartBean.doShopping(new String[] { "Lenovo", "ThinkPad" },
-				new Float[] { 1000.0f, 2000.0f });
-
-		System.out.println(result);
 		System.out.println();
 		System.out.println("*****CONTAINER ENDED****\n");
 	}
