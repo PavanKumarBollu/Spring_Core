@@ -7,11 +7,40 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="datecomponent" class="java.util.Date" />
 
-	<bean id="wmg" class="com.pavan.messagebean.WishMessageGenarator">
-		<property name="date" ref="datecomponent" />
+	<!-- DataSource Object  -->
+	<bean id="mySqlDao"	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql:///jdbc" />
+		<property name="username" value="root" />
+		<property name="password" value="Pav@0211" />
+
 	</bean>
+	
+	<!-- Injecting the DataSource Object Into DAO Layer Using constructor Injection -->
+	<bean id= "customerDao" class="com.pavan.dao.CustomerMySQLDAOImple">
+		<constructor-arg name="dataSource" ref="mySqlDao"/>
+	
+	</bean>
+	
+	
+	<!-- Injecting the DAO Object Into Service Layer Using constructor Injection -->
+	
+	<bean id="customerService" class="com.pavan.service.CustomerServiceMangtImpl" >
+	
+		<constructor-arg name="dao" ref="customerDao"  />
+	</bean>
+	
+	<!-- Injecting the Service Object Into Controller Layer Using constructor Injection -->
+
+	<bean id="customerController" class="com.pavan.controller.MainController" >
+	
+	<constructor-arg name="service" ref="customerService" />
+	</bean>
+
+
+
 </beans>
  
  
