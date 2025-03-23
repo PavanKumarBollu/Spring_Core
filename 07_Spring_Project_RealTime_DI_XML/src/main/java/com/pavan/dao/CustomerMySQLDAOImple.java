@@ -2,7 +2,7 @@ package com.pavan.dao;
 
 import javax.sql.DataSource;
 
-import com.pavan.test.CustomerBO;
+import com.pavan.bo.CustomerBO;
 
 public class CustomerMySQLDAOImple implements ICustomerDao {
 

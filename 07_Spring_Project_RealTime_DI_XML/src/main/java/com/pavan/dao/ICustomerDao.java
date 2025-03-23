@@ -1,6 +1,6 @@
 package com.pavan.dao;
 
-import com.pavan.test.CustomerBO;
+import com.pavan.bo.CustomerBO;
 
 public interface ICustomerDao {
 	public int save(CustomerBO bo) throws Exception;
