@@ -6,16 +6,45 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="dtdc" class="com.pavan.beans.DTDC"/>
-	<bean id="bDart" class="com.pavan.beans.BlueDart"/>
-	<bean id="fFlight" class="com.pavan.beans.FirstFlight"/>
+
+<!-- Auto Wiring byType -->
+	<!-- When You have more than one bean to auto wire then by specifying the primary= true that bean will be given high priority  -->
+	<bean id="dtdc1" class="com.pavan.beans.DTDC" />
+	<bean id="bDart1" class="com.pavan.beans.BlueDart" primary="true" autowire-candidate="false" />
+	<!-- The Following bean does not participate in the bean auto wiring  -->
+	<bean id="fFlight1" class="com.pavan.beans.FirstFlight" autowire-candidate="false" /> 
+
+
+	<bean id="flipkart1" class="com.pavan.beans.Flipkart" autowire="byType">
+		<property name="discount" value="21.5f" />
+		
+	</bean>
 	
-	
-	<bean id="flipkart" class="com.pavan.beans.Flipkart">
-	<property name="courier" ref="dtdc" />
-	<property name = "discount" value = "21.5f" />
-	
+<!-- Auto Wiring byName -->
+
+	<bean id="dtdc2" class="com.pavan.beans.DTDC"/>
+	<bean id="courier" class="com.pavan.beans.BlueDart" />
+	<bean id="fFlight2" class="com.pavan.beans.FirstFlight" /> 
+
+<!-- when You Say By Using the byName you have to make sure that the property name and the id of the bean should be same then it will be mapped automatically  -->
+	<bean id="flipkart2" class="com.pavan.beans.Flipkart" autowire="byName" >
+		<property name="discount" value="21.5f" />
+		
 	</bean>
 	
 	
+	
+	
+	<!-- Auto WiringConstructor  -->
+
+	<bean id="dtdc3" class="com.pavan.beans.DTDC" autowire-candidate="false"/>
+	<bean id="courier3" class="com.pavan.beans.BlueDart" autowire-candidate="false"/>
+	<bean id="fFlight3" class="com.pavan.beans.FirstFlight" primary="true" /> 
+
+<!-- when You Say By Using the byName you have to make sure that the property name and the id of the bean should be same then it will be mapped automatically  -->
+	<bean id="flipkart3" class="com.pavan.beans.Flipkart" autowire="constructor">
+		<property name="discount" value="21.5f" />
+		
+	</bean>
+
 </beans>
