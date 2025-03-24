@@ -1,9 +1,0 @@
-package com.pavan.test;
-
-import com.pavan.comp.WishGenarator;
-
-public class Test {
-	public static void main(String[] args) {
-		WishGenarator wish = new WishGenarator();
-	}
-}

@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module Spring_SetterInjuction {
-	requires spring.core;
-}

@@ -1,7 +1,0 @@
-package com.pavan.comp;
-
-import java.util.Date;
-
-public class WishGenarator {
-	private Date date = null;
-}
