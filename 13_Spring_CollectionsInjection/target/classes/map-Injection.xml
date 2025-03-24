@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="date" class="java.util.Date" />
+	<bean id="dob" class="java.util.Date">
+		<property name="year" value="2001" />
+		<property name="month" value="07" />
+		<property name="date" value="23" />
+	</bean>
+
+
+	<bean id="mapInjection" class="com.pavan.beans.MapInjection">
+		<property name="fDetails">
+			<map key-type="java.lang.Integer" value-type="java.lang.String">
+				<entry key="01" value="Pavan"/>
+				<entry> 
+					<key><value>02</value></key>
+					<value>Ravi</value>
+				</entry>
+				<entry key="03" value="Naveen" />
+			</map>
+
+
+		</property>
+		<property name="dates">
+			<map key-type="java.lang.String" value-type="java.lang.Date">
+				<entry key="TodayDate" value-ref="date" />
+				<entry>
+					<key>
+						<value>DateOfBirth</value>
+					</key>
+					<ref bean="dob"/>
+				</entry>
+			</map>
+		
+		</property>
+
+
+	</bean>
+
+</beans>

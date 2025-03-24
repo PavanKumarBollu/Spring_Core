@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        
+        <bean id="arr" class="com.pavan.beans.ArrayInjection">
+        	<property name="marks">
+        		<array>
+        			<value>99</value>
+        			<value>88</value>
+        			<value>77</value>
+        			<value>78</value>
+        			<value>79</value>
+        			<value>89</value>
+        		</array>
+        	</property>
+        	<property name="names">
+        		<array>
+        		<value>Pavan</value>
+        		<value>Kumar</value>
+        		<value>Yadav</value>
+        		<value>Naveen</value>
+        		<value>Ravi</value>
+        		<value>Latha</value>
+        		
+        		</array>
+        	
+        	</property>
+        </bean>
+
+
+</beans>

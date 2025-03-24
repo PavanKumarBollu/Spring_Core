@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean id="date" class="java.util.Date" />
+	<bean id="dob" class="java.util.Date">
+		<property name="year" value="2001" />
+		<property name="month" value="07" />
+		<property name="date" value="23" />
+
+	</bean>
+
+
+
+	<bean id="setInjection" class="com.pavan.beans.SetInjection">
+
+		<property name="pno">
+			<set>
+				<value>9581950211</value>
+				<value>9581950211</value>
+				<value>9581950221</value>
+				<value>9581950231</value>
+				<value>9581950241</value>
+			</set>
+
+		</property>
+		<property name="dates">
+			<set>
+				<ref bean="date" />
+				<ref bean="dob" />
+			</set>
+		</property>
+
+
+	</bean>
+
+
+
+</beans>
