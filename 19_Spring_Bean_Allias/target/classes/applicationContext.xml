@@ -5,34 +5,14 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="degreeSubjects" class="com.pavan.beans.DegreeSubjects" parent="commonSubjects">
+	<bean id="date" class="java.util.Date" />
 
-		<property name="subjects">
-			<set merge="true">
-				<value>DSA</value>
-				<value>JAVA</value>
-				<value>WEBTECHNOLOGIES</value>
-				<value>RDBMS</value>
-			</set>
-		</property>
+
+	<bean id="wishMessageGenarator" class="com.pavan.messagebean.WishMessageGenarator"> 
+		<property name="date" ref="date"/>
 	</bean>
 
-	<bean id="commonSubjects" class="com.pavan.beansDegreeSubjects" abstract="true">
-		<property name="subjects">
-			<set>
-				<value>C</value>
-				<value>C++</value>
-				<value>DBMS</value>
-				<value>IOT</value>
-				<value>AI</value>
-				<value>ML</value>
-			</set>
-		</property>
-
-	</bean>
-
-
-
+	<alias name="wishMessageGenarator" alias="wmg"/>
 
 
 
