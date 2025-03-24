@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+<!-- Auto Wiring by using the Constructor  -->
+	<!-- When You have more than one bean to auto wire then by specifying the primary= true that bean will be given high priority  -->
+	<bean id="dtdc" class="com.pavan.beans.DTDC" primary="true" autowire-candidate="false" />
+	<bean id="bDart" class="com.pavan.beans.BlueDart"  autowire-candidate="false" primary="true"/>
+	<!-- The Following bean does not participate in the bean auto wiring  -->
+	<bean id="fFlight" class="com.pavan.beans.FirstFlight"  /> 
+
+
+	<bean id="flipkart" class="com.pavan.beans.Flipkart" autowire="constructor">
+		<constructor-arg name="discount" value="21.5f" />
+		<!--  <constructor-arg name="courier" ref="fFlight" />-->
+		
+	</bean>
+
+</beans>
