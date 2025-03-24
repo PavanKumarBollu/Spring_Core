@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.pavan.beans.CarConstructorInjection;
 import com.pavan.beans.CarSetterInjection;
 
 public class Test_ApplicationContext {
@@ -24,6 +25,14 @@ public class Test_ApplicationContext {
 		
 		CarSetterInjection car2 = context.getBean("car2", CarSetterInjection.class);
 		System.out.println(car2);
+		System.out.println();
+		
+		CarConstructorInjection car3 = context.getBean("car3", CarConstructorInjection.class);
+		System.out.println(car3);
+		System.out.println();
+		
+		CarConstructorInjection car4 = context.getBean("car4", CarConstructorInjection.class);
+		System.out.println(car4);
 		System.out.println();
 		
 		

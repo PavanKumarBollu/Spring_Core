@@ -4,7 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="baseCar" class="com.pavan.beans.CarSetterInjection" abstract="true">
+
+<!-- Bean Inheritance Using the Setter Injection Style  -->
+	<bean id="baseCarS" class="com.pavan.beans.CarSetterInjection" abstract="true">
 		<property name="model" value="Swift" />
 		<property name="company" value="suzuki" />
 		<property name="type" value="hutchBack" />
@@ -13,7 +15,7 @@
 	
 	</bean>
 	
-	<bean id="car1" class="com.pavan.beans.CarSetterInjection" parent="baseCar" >
+	<bean id="car1" class="com.pavan.beans.CarSetterInjection" parent="baseCarS" >
 		<property name="regNo" value="Ts31k4432" />
 		<property name="color" value="White" />
 		<property name="owner" value="Pavan" />
@@ -21,12 +23,38 @@
 	</bean>
 	
 	
-	<bean id="car2" class="com.pavan.beans.CarSetterInjection" parent="baseCar" >
+	<bean id="car2" class="com.pavan.beans.CarSetterInjection" parent="baseCarS" >
 		<property name="regNo" value="Ts14j1476" />
 		<property name="color" value="Grey" />
 		<property name="owner" value="Krishna" />
 		<property name="engineNo" value="85220" />
 	</bean>
+
+
+	<!-- Bean Inheritance Using the Constructor Injection Style  -->
+	<bean id="baseCarC" class="com.pavan.beans.CarConstructorInjection" abstract="true">
+		<constructor-arg name="model" value="Swift" />
+		<constructor-arg name="company" value="suzuki" />
+		<constructor-arg name="type" value="hutchBack" />
+		<constructor-arg name="fuelType" value="diesel" />
+		<constructor-arg name="engineCC" value="15000" />
+	</bean>	
+	<bean id="car3" class="com.pavan.beans.CarConstructorInjection" parent="baseCarC">
+		<constructor-arg name="regNo" value="Ts31k4432" />
+		<constructor-arg name="color" value="White" />
+		<constructor-arg name="owner" value="Pavan" />
+		<constructor-arg name="engineNo" value="958195" />
+	</bean>	
+	<bean id="car4" class="com.pavan.beans.CarConstructorInjection" parent="baseCarC">
+		<constructor-arg name="regNo" value="Ts14j1476" />
+		<constructor-arg name="color" value="Grey" />
+		<constructor-arg name="owner" value="Krishna" />
+		<constructor-arg name="engineNo" value="85220" />
+	</bean>	
+
+
+
+
 
 
 
