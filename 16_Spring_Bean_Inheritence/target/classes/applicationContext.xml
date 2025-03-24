@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="baseCar" class="com.pavan.beans.CarSetterInjection" abstract="true">
+		<property name="model" value="Swift" />
+		<property name="company" value="suzuki" />
+		<property name="type" value="hutchBack" />
+		<property name="fuelType" value="diesel" />
+		<property name="engineCC" value="15000" />
+	
+	</bean>
+	
+	<bean id="car1" class="com.pavan.beans.CarSetterInjection" parent="baseCar" >
+		<property name="regNo" value="Ts31k4432" />
+		<property name="color" value="White" />
+		<property name="owner" value="Pavan" />
+		<property name="engineNo" value="958195" />
+	</bean>
+	
+	
+	<bean id="car2" class="com.pavan.beans.CarSetterInjection" parent="baseCar" >
+		<property name="regNo" value="Ts14j1476" />
+		<property name="color" value="Grey" />
+		<property name="owner" value="Krishna" />
+		<property name="engineNo" value="85220" />
+	</bean>
+
+
+
+
+</beans>
+ 
+ 
