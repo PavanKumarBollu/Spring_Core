@@ -1,5 +1,7 @@
 package com.pavan.test;
 
+import java.util.Arrays;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.pavan.beans.Flipkart;
@@ -11,7 +13,7 @@ public class Test_Application_Context {
 		
 		
 		System.out.println("*****CONTAINER STARTED****\n");
-		System.out.println();
+		System.out.println("beans Names: " + Arrays.toString(factory.getBeanDefinitionNames()));
 		System.out.println();
 
 		Flipkart flipkartBean = factory.getBean("flipkart", Flipkart.class);
@@ -24,6 +26,7 @@ public class Test_Application_Context {
 		System.out.println(result);
 		System.out.println();
 		System.out.println("*****CONTAINER ENDED****\n");
+		factory.close();
 	}
 
 }

@@ -12,7 +12,7 @@ public class FirstFlight implements ICourier {
 	@Override
 	public String deliver(int oid) {
 		System.out.println("DTDC.deliver()");
-		return "DTDC Courier will delived with the order id :: "+oid+" for the ordered products";
+		return "FirstFlight Courier will delived with the order id :: "+oid+" for the ordered products";
 	}
 
 }
