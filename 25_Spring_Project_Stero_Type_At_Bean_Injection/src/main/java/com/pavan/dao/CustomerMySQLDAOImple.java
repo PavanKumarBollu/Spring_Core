@@ -6,25 +6,27 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import com.pavan.bo.CustomerBO;
 
+@Repository(value="dao")
 public class CustomerMySQLDAOImple implements ICustomerDao {
 
 	
 	
 	
 	private static final String INSERT_QUERY = "insert into customer (cName, caddress, pamt, rate, time,intrAmt )values(?,?,?,?,?,?)";
-	private DataSource dataSource = null;
+	
+	@Autowired
+	private DataSource dataSource;
 	
 	static
 	{
 		System.out.println("CustomerMySQLDAOImple .class file is loading....\n");
 	}
 
-	public CustomerMySQLDAOImple(DataSource dataSource) {
-		this.dataSource = dataSource;
-		System.out.println("CustomerMySQLDAOImpl:: 1 param constructor -----> " + dataSource.getClass().getName());
-	}
 
 	@Override
 	public int save(CustomerBO bo) throws Exception {

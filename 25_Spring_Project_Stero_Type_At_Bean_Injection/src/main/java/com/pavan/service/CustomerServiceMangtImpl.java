@@ -1,21 +1,22 @@
 package com.pavan.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.pavan.bo.CustomerBO;
 import com.pavan.dao.ICustomerDao;
 import com.pavan.dto.CustomerDTO;
 
+@Service(value="service")
 public class CustomerServiceMangtImpl implements ICustomerMangtService {
 
-	private ICustomerDao dao = null;
+	@Autowired
+	private ICustomerDao dao;
 
 	static {
 		System.out.println("CustomerServieMangtImpl .class file is Loading....");
 	}
 
-	public CustomerServiceMangtImpl(ICustomerDao dao) {
-		this.dao = dao;
-		System.out.println("CustomerMgmtServiceImpl:: 1 param constructor----> " + dao.getClass().getName());
-	}
 
 	@Override
 	public String caluculateSimpleInterest(CustomerDTO dto) throws Exception {

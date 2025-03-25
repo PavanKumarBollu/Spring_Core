@@ -1,5 +1,6 @@
 package com.pavan.test;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
@@ -46,8 +47,9 @@ public class TestApplication {
 		reader.loadBeanDefinitions("applicationContext.xml");
 		
 		
-		MainController controller = factory.getBean("customerController", MainController.class);
+		MainController controller = factory.getBean("controller",MainController.class);
 		System.out.println("\n************Container Started ***************");
+		System.out.println("Bean Names :: " + Arrays.toString(factory.getBeanDefinitionNames()));
 		try {
 			String result = controller.processCustomer(vo);
 			System.out.println("\n"+result);

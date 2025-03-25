@@ -10,14 +10,24 @@
         https://www.springframework.org/schema/context/spring-context.xsd" >
 
 
-	<import resource="datasourceObject.xml"/>
 	
 	
-	<!-- Injecting the DataSource Object Into DAO Layer Using constructor Injection -->
-	<bean id= "customerDao" class="com.pavan.dao.CustomerMySQLDAOImple">
-		<constructor-arg name="dataSource" ref="Dao"/>
-	
+	<!-- Importing the properties file -->
+	<context:property-placeholder location="src/main/resources/application.properties" />
+
+	<bean id="mysqlDAO"	class="org.springframework.jdbc.datasource.DriverManagerDataSource"	scope="singleton" abstract="true">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+		<property name="username" value="root" />
+		<property name="password" value="Pav@0211" />
 	</bean>
+
+	<bean id="dataSource"	class="com.zaxxer.hikari.HikariDataSource" parent="mysqlDAO">
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/jdbc" />
+		<property name="minimumIdle" value='10' /> <!-- min pool size -->
+		<property name="maximumPoolSize" value='20' />
+		<property name="connectionTimeout" value='2000' />
+	</bean>
+	
 
 
 </beans>

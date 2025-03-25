@@ -1,16 +1,21 @@
 package com.pavan.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import com.pavan.dto.CustomerDTO;
 import com.pavan.service.ICustomerMangtService;
 import com.pavan.vo.CustomerVo;
 
+@Component(value="controller")
 public class MainController {
-	private ICustomerMangtService service = null;
+	
+	@Autowired
+	@Qualifier("service")
+	private ICustomerMangtService service;
 
-	public MainController(ICustomerMangtService service) {
-		this.service = service;
-		System.out.println("MainController:: 1 param constrctore ------> " + service.getClass().getName());
-	}
+	
 	
 	
 	public String processCustomer(CustomerVo vo) throws Exception
@@ -23,8 +28,7 @@ public class MainController {
 		dto.setTime(Float.parseFloat(vo.getTime()));
 		
 		
-		String result = service.caluculateSimpleInterest(dto);
-		return result;
+		return service.caluculateSimpleInterest(dto);
 	}
 	
 	
