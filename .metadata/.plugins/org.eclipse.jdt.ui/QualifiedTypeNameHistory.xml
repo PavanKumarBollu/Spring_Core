@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.nio.file.FileSystem"/>
     <fullyQualifiedTypeName name="com.pavan.comp.WishGenarator"/>
     <fullyQualifiedTypeName name="org.springframework.core.io.ClassPathResource"/>
@@ -8,12 +7,25 @@
     <fullyQualifiedTypeName name="org.springframework.beans.factory.xml.XmlBeanFactory"/>
     <fullyQualifiedTypeName name="com.pavan.messagebean.WishMessageGenarator"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.support.DefaultListableBeanFactory"/>
-    <fullyQualifiedTypeName name="com.pavan.beans.Flipkart"/>
-    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
     <fullyQualifiedTypeName name="com.pavan.service.ICustomerMangtService"/>
     <fullyQualifiedTypeName name="com.pavan.dto.CustomerDTO"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.xml.XmlBeanDefinitionReader"/>
     <fullyQualifiedTypeName name="com.pavan.controller.MainController"/>
+    <fullyQualifiedTypeName name="com.pavan.beans.ArrayInjection"/>
+    <fullyQualifiedTypeName name="com.pavan.beans.ListInjection"/>
+    <fullyQualifiedTypeName name="com.pavan.beans.SetInjection"/>
+    <fullyQualifiedTypeName name="com.pavan.beans.MapInjection"/>
+    <fullyQualifiedTypeName name="com.pavan.beans.PropertiesInjection"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="com.pavan.beans.Student"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.AbstractXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="com.pavan.beans.CarSetterInjection"/>
+    <fullyQualifiedTypeName name="com.pavan.beans.CarConstructorInjection"/>
+    <fullyQualifiedTypeName name="com.pavan.beans.Flipkart"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="com.pavan.beans.Employee"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.AbstractApplicationContext"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dob" class="java.util.Date" p:year="2001" p:month="07"
+		p:date="23" />
+
+
+
+
+	<bean id="doj" class="java.util.Date" />
+
+	<bean id="emp" class="com.pavan.beans.Employee" p:eno="12"
+		p:ename="pavan" p:dob-ref="dob" p:dept-ref="departement" />
+
+	<bean id="departement" class="com.pavan.beans.Department" c:dno="10"
+		c:doj-ref="doj">
+		<constructor-arg name="dname" value="CSE" />
+
+	</bean>
+
+
+
+
+</beans>
+ 
+ 
