@@ -14,4 +14,9 @@ public class DTDC implements ICourier {
 		System.out.println("DTDC.deliver()");
 		return "DTDC Courier will delived with the order id :: "+oid+" for the ordered products";
 	}
+	@Override
+	public String returns(int oid) {
+		System.out.println("DTDC.returns()");
+		return "DTDC Courier will pickup Your Order with the order id :: "+oid+" for the ordered products";
+	}
 }

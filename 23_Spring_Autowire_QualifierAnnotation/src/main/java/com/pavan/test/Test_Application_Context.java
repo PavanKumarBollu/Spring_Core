@@ -22,8 +22,11 @@ public class Test_Application_Context {
 
 		String result = flipkartBean.doShopping(new String[] { "Lenovo", "ThinkPad" },
 				new Float[] { 1000.0f, 2000.0f });
+		String returns = flipkartBean.getReturns(new String[] { "Lenovo", "ThinkPad" },
+				new Float[] { 1000.0f, 2000.0f });
 
 		System.out.println(result);
+		System.out.println(returns);
 		System.out.println();
 		System.out.println("*****CONTAINER ENDED****\n");
 		factory.close();

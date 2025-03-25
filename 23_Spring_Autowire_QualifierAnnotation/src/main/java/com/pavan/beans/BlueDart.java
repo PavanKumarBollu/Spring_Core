@@ -14,5 +14,11 @@ public class BlueDart implements ICourier {
 		System.out.println("DTDC.deliver()");
 		return "BlueDart Courier will delived with the order id :: "+oid+" for the ordered products";
 	}
+	@Override
+	public String returns(int oid) {
+		System.out.println("DTDC.returns()");
+		return "BlueDart Courier will Puckup your order id :: "+oid+" for the ordered products";
+	}
+	
 
 }
