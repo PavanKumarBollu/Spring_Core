@@ -20,14 +20,14 @@ public class Flipkart {
 		System.out.println("flipkart :: zero param Constructor got called");
 
 	}
-	@Autowired
+
+	@Autowired(required = true)
 	public Flipkart(@Qualifier("dtdc")ICourier courier, @Qualifier("bDart") ICourier returns) {
+//	public Flipkart(ICourier courier, ICourier returns) { // produces the Expected 1found 3 Exception
 		super();
 		this.courier = courier;
 		this.returns = returns;
 	}
-
-	
 
 	public String doShopping(String[] items, Float[] floats) {
 		System.out.println("Flipkart.doShopping()");
@@ -76,9 +76,6 @@ public class Flipkart {
 		return Arrays.toString(items) + " are Recieved having prices  " + Arrays.toString(floats)
 				+ " with billAmount of " + billAmount + "----->" + msg;
 	}
-
-
-
 
 	@Override
 	public String toString() {

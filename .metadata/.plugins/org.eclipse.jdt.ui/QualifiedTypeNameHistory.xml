@@ -24,8 +24,10 @@
     <fullyQualifiedTypeName name="com.pavan.beans.CarSetterInjection"/>
     <fullyQualifiedTypeName name="com.pavan.beans.CarConstructorInjection"/>
     <fullyQualifiedTypeName name="com.pavan.beans.Flipkart"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
     <fullyQualifiedTypeName name="com.pavan.beans.Employee"/>
     <fullyQualifiedTypeName name="org.springframework.context.support.AbstractApplicationContext"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
 </qualifiedTypeNameHistroy>
