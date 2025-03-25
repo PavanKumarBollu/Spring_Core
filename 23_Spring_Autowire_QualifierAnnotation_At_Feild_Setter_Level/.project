@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>23_Spring_Autowire_QualifierAnnotation</name>
+	<name>23_Spring_Autowire_QualifierAnnotation_At_Feild_Setter_Level</name>
 	<comment></comment>
 	<projects>
 	</projects>
