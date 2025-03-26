@@ -114,6 +114,7 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 				else
 					result = "Pass";
 			}
+			return result;
 
 		} catch (SQLException se) {
 			se.printStackTrace();
