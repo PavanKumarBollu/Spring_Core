@@ -72,10 +72,24 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 	}
 
 	@Override
-	public String updateEmployee(EmployeeBO dto) {
+	public String updateEmployee(EmployeeBO bo) {
 
+		String result = "";
 		try (Connection connection = dataSource.getConnection();
 				PreparedStatement pst = connection.prepareStatement(UPDATE_QUERY);) {
+			if(pst!=null)
+			{
+				pst.setString(1, bo.geteName());
+				pst.setString(2, bo.geteAddress());
+				pst.setInt(3, bo.geteSalary());
+				pst.setInt(4, bo.geteId());
+				
+				int count = pst.executeUpdate();
+				if (count == 0)
+					result = "Fail";
+				else
+					result = "Pass";
+			}
 
 		} catch (SQLException se) {
 			se.printStackTrace();
@@ -83,14 +97,23 @@ public class EmployeeDaoImpl implements IEmployeeDao {
 			e.printStackTrace();
 		}
 
-		return null;
+		return result;
 	}
 
 	@Override
 	public String deleteEmployee(Integer eId) {
-
+		String result = "";
 		try (Connection connection = dataSource.getConnection();
 				PreparedStatement pst = connection.prepareStatement(DELETE_QUERY);) {
+			if(pst!= null)
+			{
+				pst.setInt(1, eId);
+				int count = pst.executeUpdate();
+				if (count == 0)
+					result = "Fail";
+				else
+					result = "Pass";
+			}
 
 		} catch (SQLException se) {
 			se.printStackTrace();

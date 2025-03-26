@@ -19,7 +19,6 @@ INDEX VERSION 1.134+D:\FullStack_Development\5_Code__Projects\2_BackEnd\7_Spring
 1956640717.index
 4257460394.index
 728513491.index
-532400924.index
 2183617444.index
 3249731179.index
 2413789146.index

@@ -21,9 +21,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		
 		EmployeeBO bo = new EmployeeBO();
 		
-		bo.seteName(dto.geteName());
-		bo.seteAddress(dto.geteAddress());
-		bo.seteSalary(dto.geteSalary());
+		BeanUtils.copyProperties(dto, bo);
+//		bo.seteName(dto.geteName());
+//		bo.seteAddress(dto.geteAddress());
+//		bo.seteSalary(dto.geteSalary());
 		
 		return dao.saveEmployee(bo);
 	}
@@ -40,14 +41,14 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
 	@Override
 	public String updateEmployee(EmployeeDTO dto) {
-		// TODO Auto-generated method stub
-		return null;
+		EmployeeBO bo = new EmployeeBO();
+		BeanUtils.copyProperties(dto, bo);
+		return dao.updateEmployee(bo);
 	}
 
 	@Override
 	public String deleteEmployee(Integer eId) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.deleteEmployee(eId);
 	}
 
 }
