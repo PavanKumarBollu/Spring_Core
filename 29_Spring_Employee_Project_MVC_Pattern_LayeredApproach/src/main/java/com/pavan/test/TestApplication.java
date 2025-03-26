@@ -12,83 +12,85 @@ import com.pavan.vo.EmployeeVO;
 
 public class TestApplication {
 
-	public static void main(String[] args) {
-	
-		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-		System.out.println("************* Container Started *******************\n");
-		
-		MainController controller = context.getBean("controller",MainController.class);
-		
-		boolean falg = true;
-		while(falg)
-		{
-			Scanner scanner = new Scanner(System.in);
-			System.out.print("Enter 1 For Searching the Employee.....:");
-			System.out.print("Enter 2 For Creating  new Employee.....:");
-			System.out.print("Enter 3 For Exit....\n");
-			Integer response = scanner.nextInt();
-			switch(response)
-			{
-			case 1:
-				EmployeeVO employee = controller.getEmployee(get());
-				System.out.println(employee);
-				break;
-			case 2:
-				String result = controller.saveEmployee(add());
-				System.out.println(result+"\n");
-				break;
-			case 3:
-				falg=false;
-				break;
-			default:
-				System.out.println("Please Enter Valid Input.....\n");
-				break;
-			}
-//			scanner.close();
-			
-		}
-		
-		
-		
-		
-		System.out.println("************* Container Stopped *******************\n");
-		((AbstractApplicationContext) context).close();
-	}
-	
-	
-	private static Integer get()
-	{
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.print("Enter the eId:: ");
-		Integer eId = scanner.nextInt();
-		System.out.println();
-		scanner.close();
-		return eId;
-	}
-	
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        System.out.println("************* Container Started *******************\n");
 
-	private static EmployeeVO  add() {
-		Scanner scanner = new Scanner(System.in);
-	
-		System.out.print("Enter the ename:: ");
-		String ename = scanner.next();
-		System.out.println();
-		
-		System.out.print("Enter the eaddress:: ");
-		String eaddress = scanner.next();
-		System.out.println();
-		
-		System.out.print("Enter the esalary:: ");
-		String esalary = scanner.next();
-		System.out.println();
-		EmployeeVO vo = new EmployeeVO();
-		vo.seteName(ename);
-		vo.seteAddress(eaddress);
-		vo.seteSalary(esalary);
-		scanner.close();
-		return vo;
-	}
-	
+        MainController controller = context.getBean("controller", MainController.class);
+
+        Scanner scanner = new Scanner(System.in); // Create scanner once.
+        boolean flag = true; 
+
+        while (flag) {
+            System.out.println("Enter 1 For Searching the Employee.....:");
+            System.out.println("Enter 2 For Creating  new Employee.....:");
+            System.out.println("Enter 3 For Exit....");
+            System.out.print("your Choice : ");
+            if (scanner.hasNextInt()){
+                Integer response = scanner.nextInt();
+                scanner.nextLine(); 
+                switch (response) {
+                    case 1:
+                        EmployeeVO employee = controller.getEmployee(get(scanner));
+                        System.out.println(employee + "\n");
+                        break;
+                    case 2:
+                        String result = controller.saveEmployee(add(scanner));
+                        System.out.println(result + "\n");
+                        break;
+                    case 3:
+                        flag = false;
+                        break;
+                    default:
+                        System.out.println("Please Enter Valid Input.....\n");
+                        break;
+                }
+
+            } else {
+                System.out.println("Invalid input, please enter an Integer");
+                scanner.nextLine(); 
+            }
+
+        }
+
+        scanner.close(); 
+
+        System.out.println("************* Container Stopped *******************\n");
+        ((AbstractApplicationContext) context).close();
+    }
+
+    private static Integer get(Scanner scanner) { 
+        System.out.print("Enter the eId:: ");
+        if (scanner.hasNextInt()){
+            Integer eId = scanner.nextInt();
+            scanner.nextLine(); 
+            System.out.println();
+            return eId;
+        } else {
+            System.out.println("Invalid input, please enter an Integer");
+            scanner.nextLine();
+            return 0; 
+        }
+
+    }
+
+    private static EmployeeVO add(Scanner scanner) { 
+        System.out.print("Enter the ename:: ");
+        String ename = scanner.nextLine();
+        System.out.println();
+
+        System.out.print("Enter the eaddress:: ");
+        String eaddress = scanner.nextLine();
+        System.out.println();
+
+        System.out.print("Enter the esalary:: ");
+        String esalary = scanner.nextLine();
+        System.out.println();
+
+        EmployeeVO vo = new EmployeeVO();
+        vo.seteName(ename);
+        vo.seteAddress(eaddress);
+        vo.seteSalary(esalary);
+        return vo;
+    }
 }

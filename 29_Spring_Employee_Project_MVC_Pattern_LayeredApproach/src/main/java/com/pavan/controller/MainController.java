@@ -24,7 +24,15 @@ public class MainController {
 		dto.seteName(vo.geteName());
 		dto.seteAddress(vo.geteAddress());
 		dto.seteSalary(Integer.parseInt(vo.geteSalary()));		
-		return service.saveEmployee(dto);
+		 String result = service.saveEmployee(dto);
+		 if("pass".equalsIgnoreCase(result))
+		 {
+			 return "Employee Added SuccessFully ...\n";
+		 }
+		 else
+		 {
+			 return "Failed to Add the Employee... \n";
+		 }
 	}
 	
 	
