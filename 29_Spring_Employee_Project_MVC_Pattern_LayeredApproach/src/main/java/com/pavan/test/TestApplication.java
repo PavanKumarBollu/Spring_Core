@@ -43,7 +43,6 @@ public class TestApplication {
 				case 3:
 					EmployeeVO oldEmpDetails = controller.getEmployee(get(scanner));
 					EmployeeVO newEmpDetails = update(oldEmpDetails, scanner);
-					// write the logic of updating the emp details
 					String updateEmp = controller.updateEmployee(newEmpDetails);
 					System.out.println(updateEmp + "\n");
 					break;
